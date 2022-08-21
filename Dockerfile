@@ -3,12 +3,13 @@ FROM debian:stable
 COPY . /opt
 
 USER root
+WORKDIR /opt
 
 RUN apt update && apt install -y git wget python pip
-RUN pip install -r /opt/python_requirements.txt
+RUN pip install -r python_requirements.txt
 
-RUN /opt/aws/install
+RUN aws/install
 
-RUN /opt/install_terraform.sh
+RUN ./install_terraform.sh
 
 CMD [ "sleep", "infinity" ]
