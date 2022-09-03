@@ -6,3 +6,5 @@ This docker container will include the following tools:
 * git
 * python + pip
 * terraform
+
+To build the image run build.sh
